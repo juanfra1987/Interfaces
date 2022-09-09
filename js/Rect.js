@@ -13,6 +13,6 @@ class Rect extends Figura {
     }
 
     estaElPunto(x, y) {
-        return (!(x < this.posX || x > this.posX + this.width || y < this.posY || y > this.posY + this.height));
+        return ((x > this.posX + 8 && x < this.posX + this.width + 8 && y > this.posY + 6 && y < this.posY + this.height + 6));
     }
 }

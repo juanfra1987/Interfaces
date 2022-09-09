@@ -5,7 +5,7 @@ let canvasHeight = canvas.height;
 
 let figuras = [];
 
-const CANT_FIG = 30;
+const CANT_FIG = 20;
 
 let mouseUp = false;
 let mouseDown = false;
@@ -24,11 +24,6 @@ canvas.addEventListener('mouseup', () => {
 /* canvas.addEventListener('mousemove', (e) => {
     console.log(e);
 }); */
-
-
-
-
-
 
 function main() {
     pintarCanvas();
@@ -49,8 +44,6 @@ function dibujar() {
 
 }
 
-
-
 function pintarCanvas() {
     let unColor = 'rgba(245, 245, 245, 255)';
     let rect = new Rect(0, 0, canvasWidth - 1, canvasHeight - 1, unColor, ctx, true);
@@ -60,13 +53,16 @@ function pintarCanvas() {
 function addFigura(estilo) {
     let posX = Math.round(Math.random() * canvasWidth);
     let posY = Math.round(Math.random() * canvasHeight);
+    console.log("se creo en" + posX, posY);
+
+
     let color = randomRGBA();
 
     if (estilo == true) {
-        let rect = new Rect(posX, posY, Math.round(Math.random() * 50), Math.round(Math.random() * 50), color, ctx, false);
+        let rect = new Rect(posX, posY, Math.round(Math.random() * 100), Math.round(Math.random() * 100), color, ctx, false);
         figuras.push(rect);
     } else {
-        let ellipse = new Ellipse(posX, posY, Math.round(Math.random() * 50), Math.round(Math.random() * 50), color, ctx, false);
+        let ellipse = new Ellipse(posX, posY, Math.round(Math.random() * 100), Math.round(Math.random() * 100), color, ctx, false);
         figuras.push(ellipse);
 
     }
@@ -84,8 +80,7 @@ function randomRGBA() {
 }
 
 canvas.addEventListener('click', (e) => {
-    let figuraClickeada = verificarFigura(e.x, e.y);
-    console.log(figuraClickeada);
+    let figuraClickeada = verificarFigura(e.layerX, e.layerY);
     if (figuraClickeada != null) {
         console.log("Clickeo sobre una figura");
     } else {
@@ -96,11 +91,11 @@ canvas.addEventListener('click', (e) => {
 function verificarFigura(x, y) {
     for (i = 0; i < figuras.length; i++) {
         let elemento = figuras[i];
-        console.log(elemento);
         if (elemento.estaElPunto(x, y)) {
             return elemento;
         }
     }
+    return null;
 };
 
 /* function seClickeoFigura() {
