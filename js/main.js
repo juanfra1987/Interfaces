@@ -5,7 +5,7 @@ let canvasHeight = canvas.height;
 
 let figuras = [];
 
-const CANT_FIG = 30;
+const CANT_FIG = 2;
 
 let mouseUp = false;
 let mouseDown = false;
@@ -45,15 +45,9 @@ function crearFiguras() {
     }
 }
 
-function dibujar() {
-
-}
-
-
-
 function pintarCanvas() {
     let unColor = 'rgba(245, 245, 245, 255)';
-    let rect = new Rect(0, 0, canvasWidth - 1, canvasHeight - 1, unColor, ctx, true);
+    let rect = new Rect(0, 0, canvasWidth -1, canvasHeight -1, unColor, ctx, true);
     rect.draw();
 }
 
@@ -101,13 +95,5 @@ function verificarFigura(x, y) {
             return elemento;
         }
     }
+    return null;
 };
-
-/* function seClickeoFigura() {
-    canvas.addEventListener('click', verificarFigura);
-    let figuraClickeada = verificarFigura(canvas.click.posX, canvas.click.posY)
-    if (figuraClickeada != null)
-        console.log("El punto esta dentro de una figura");
-    else
-        console.log("El punto no esta dentro de una figura");
-} */

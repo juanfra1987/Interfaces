@@ -13,8 +13,8 @@ class Ellipse extends Figura {
     }
 
     estaElPunto(x, y) {
-        let xx = this.posX - x;
-        let yy = this.posY - y;
+        let xx = this.posX-x ;
+        let yy = this.posY-y ;
         return ((Math.sqrt(xx * xx + yy * yy) < this.radius));
     }
 
