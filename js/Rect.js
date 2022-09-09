@@ -1,6 +1,8 @@
 class Rect extends Figura {
     constructor(posX, posY, width, height, fill, context, estilo) {
-        super(posX, posY, width, height, fill, context, estilo);
+        super(posX, posY, fill, context, estilo);
+        this.width = width;
+        this.height = height;
     }
 
     draw() {

@@ -62,7 +62,7 @@ function addFigura(estilo) {
         let rect = new Rect(posX, posY, Math.round(Math.random() * 100), Math.round(Math.random() * 100), color, ctx, false);
         figuras.push(rect);
     } else {
-        let ellipse = new Ellipse(posX, posY, Math.round(Math.random() * 100), Math.round(Math.random() * 100), color, ctx, false);
+        let ellipse = new Ellipse(posX, posY, Math.round(Math.random() * 50), color, ctx, false);
         figuras.push(ellipse);
 
     }

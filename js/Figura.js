@@ -3,11 +3,9 @@
 // Vamos a ir refinándola conforme avancemos con objetos
 
 class Figura {
-    constructor(posX, posY, width, height, fill, context, estilo) {
+    constructor(posX, posY, fill, context, estilo) {
         this.posX = posX;
         this.posY = posY;
-        this.width = width;
-        this.height = height;
         this.fill = fill;
         this.ctx = context;
         this.estilo = estilo;
