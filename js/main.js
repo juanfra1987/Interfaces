@@ -21,9 +21,14 @@ canvas.addEventListener('mouseup', () => {
     mouseDown = false;
 });
 
-canvas.addEventListener('mousemove', (e) => {
+/* canvas.addEventListener('mousemove', (e) => {
     console.log(e);
-});
+}); */
+
+
+
+
+
 
 function main() {
     pintarCanvas();
@@ -43,6 +48,8 @@ function crearFiguras() {
 function dibujar() {
 
 }
+
+
 
 function pintarCanvas() {
     let unColor = 'rgba(245, 245, 245, 255)';
@@ -75,3 +82,32 @@ function randomRGBA() {
     let a = 255;
     return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
+
+canvas.addEventListener('click', (e) => {
+    let figuraClickeada = verificarFigura(e.x, e.y);
+    console.log(figuraClickeada);
+    if (figuraClickeada != null) {
+        console.log("Clickeo sobre una figura");
+    } else {
+        console.log("No clickeo sobre una figura")
+    }
+});
+
+function verificarFigura(x, y) {
+    for (i = 0; i < figuras.length; i++) {
+        let elemento = figuras[i];
+        console.log(elemento);
+        if (elemento.estaElPunto(x, y)) {
+            return elemento;
+        }
+    }
+};
+
+/* function seClickeoFigura() {
+    canvas.addEventListener('click', verificarFigura);
+    let figuraClickeada = verificarFigura(canvas.click.posX, canvas.click.posY)
+    if (figuraClickeada != null)
+        console.log("El punto esta dentro de una figura");
+    else
+        console.log("El punto no esta dentro de una figura");
+} */
