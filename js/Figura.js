@@ -1,7 +1,3 @@
-// Clase Figura. 
-// Versión mamarrachito lindo. 
-// Vamos a ir refinándola conforme avancemos con objetos
-
 class Figura {
     constructor(posX, posY, fill, context, estilo) {
         this.posX = posX;
